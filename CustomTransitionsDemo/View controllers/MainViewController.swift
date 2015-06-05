@@ -70,6 +70,8 @@ class MainViewController: UITableViewController {
     }
 }
 
+// MARK: - View controller transitioning delegate
+
 extension MainViewController: UIViewControllerTransitioningDelegate {
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return bounceAnimationController

@@ -8,6 +8,6 @@
 
 import UIKit
 
-class AboutViewModel {
+struct AboutViewModel {
     let authorName = "József Vesza"
 }

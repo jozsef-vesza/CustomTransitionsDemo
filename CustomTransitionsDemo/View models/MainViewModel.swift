@@ -8,13 +8,12 @@
 
 import UIKit
 
-class MainViewModel: NSObject {
+struct MainViewModel {
     
     let photoStore: PhotoStore
     
     init(photoStore: PhotoStore) {
         self.photoStore = photoStore
-        super.init()
     }
     
     var count: Int {

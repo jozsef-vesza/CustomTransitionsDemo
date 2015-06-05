@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewModel: NSObject {
+struct DetailViewModel {
     
     let photoStore: PhotoStore
     let selectedIndex: Int
@@ -16,7 +16,6 @@ class DetailViewModel: NSObject {
     init(photoStore: PhotoStore, selectedIndex: Int) {
         self.photoStore = photoStore
         self.selectedIndex = selectedIndex
-        super.init()
     }
     
     var authorName: String {
