@@ -13,7 +13,7 @@ class FlipAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     var reverse = false
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return 1.0
+        return 0.5
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
