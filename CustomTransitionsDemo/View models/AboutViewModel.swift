@@ -9,5 +9,5 @@
 import UIKit
 
 struct AboutViewModel {
-    let authorName = "József Vesza"
+    let authorName = "Created by József Vesza"
 }
