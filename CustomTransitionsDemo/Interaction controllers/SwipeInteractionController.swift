@@ -48,7 +48,7 @@ class SwipeInteractionController: UIPercentDrivenInteractiveTransition {
             // 4. Update the animation
             updateInteractiveTransition(fraction)
             
-        case .Ended, .Cancelled where !shouldCompleteTransition || gestureRecognizer.state == .Cancelled:
+        case .Ended, .Cancelled:
             // 5. Finish or cancel
             interactionInProgress = false
             
