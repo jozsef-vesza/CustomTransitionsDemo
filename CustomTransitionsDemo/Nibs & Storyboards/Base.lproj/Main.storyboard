@@ -136,12 +136,6 @@
                                     <constraint firstAttribute="width" constant="100" id="nR8-jV-amk"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkx-WO-Ezd">
-                                <rect key="frame" x="279" y="410" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJm-RG-gb6">
                                 <rect key="frame" x="279" y="360" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -157,9 +151,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="qkx-WO-Ezd" secondAttribute="centerX" id="0iN-eq-9Di"/>
                             <constraint firstAttribute="centerX" secondItem="lJm-RG-gb6" secondAttribute="centerX" id="9fY-Ce-d04"/>
-                            <constraint firstItem="qkx-WO-Ezd" firstAttribute="top" secondItem="XXn-dx-Q7A" secondAttribute="bottom" constant="10" id="AwO-dv-iGF"/>
                             <constraint firstAttribute="centerX" secondItem="47c-BR-PWK" secondAttribute="centerX" id="H4j-oc-H6h"/>
                             <constraint firstItem="XXn-dx-Q7A" firstAttribute="top" secondItem="47c-BR-PWK" secondAttribute="bottom" constant="10" id="LVJ-KX-k8B"/>
                             <constraint firstItem="0ch-eF-Evr" firstAttribute="top" secondItem="enX-lh-qA4" secondAttribute="bottom" constant="10" id="Tai-HD-Akz"/>
@@ -168,11 +160,6 @@
                             <constraint firstAttribute="centerX" secondItem="XXn-dx-Q7A" secondAttribute="centerX" id="r7Y-zL-VkL"/>
                             <constraint firstAttribute="centerX" secondItem="enX-lh-qA4" secondAttribute="centerX" id="yl3-6D-LMd"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="qkx-WO-Ezd"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="lJm-RG-gb6" id="c4M-VF-jil"/>
