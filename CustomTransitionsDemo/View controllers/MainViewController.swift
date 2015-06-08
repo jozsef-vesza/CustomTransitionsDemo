@@ -17,6 +17,8 @@ class MainViewController: UITableViewController {
     
     private let bounceAnimationController = BounceAnimationController()
     private let shrinkDismissAnimationController = ShrinkDismissAnimationController()
+    private let flipAnimationController = FlipAnimationController()
+    private let swipeInteractionController = SwipeInteractionController()
     
     // MARK: - Lifecycle
     
@@ -26,6 +28,8 @@ class MainViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
         tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        navigationController?.delegate = self
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -39,6 +43,11 @@ class MainViewController: UITableViewController {
         }
         
         if segue.identifier == aboutSegueId, let destination = segue.destinationViewController as? AboutViewController {
+            
+            let aboutViewModel = AboutViewModel(authorStore: AuthorStore.sharedInstance)
+            
+            destination.viewModel = aboutViewModel
+            
             destination.transitioningDelegate = self
         }
     }
@@ -81,5 +90,25 @@ extension MainViewController: UIViewControllerTransitioningDelegate {
     
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return shrinkDismissAnimationController
+    }
+}
+
+// MARK: - Navigation controller delegate
+
+extension MainViewController: UINavigationControllerDelegate {
+
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .Push {
+            swipeInteractionController.wireToViewController(toVC)
+        }
+        
+        flipAnimationController.reverse = operation == .Pop
+        return flipAnimationController
+    }
+    
+    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        
+        return swipeInteractionController.interactionInProgress ? swipeInteractionController : nil
     }
 }

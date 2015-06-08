@@ -9,5 +9,22 @@
 import UIKit
 
 struct AboutViewModel {
-    let authorName = "Created by József Vesza"
+    
+    let authorStore: AuthorStore
+    
+    init(authorStore: AuthorStore) {
+        self.authorStore = authorStore
+    }
+    
+    var author: Author {
+        return authorStore.defaultAuthor
+    }
+    
+    var authorName: String {
+        return author.name
+    }
+    
+    var authorPhoto: UIImage {
+        return author.photo
+    }
 }

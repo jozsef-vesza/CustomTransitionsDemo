@@ -15,6 +15,7 @@ struct Photo {
     var image: UIImage?
     
     init(title: String, withAuthor author: String, withImage image: UIImage?) {
+        
         self.title = title
         self.author = author
         self.image = image

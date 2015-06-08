@@ -23,6 +23,10 @@
 		0402C3EC1B20985D0054CF1F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C3EB1B20985D0054CF1F /* AboutViewController.swift */; };
 		0402C3EF1B2099C90054CF1F /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0402C3EE1B2099C90054CF1F /* BounceAnimationController.swift */; };
 		0409CA1D1B257B2000F3A28C /* ShrinkDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409CA1C1B257B2000F3A28C /* ShrinkDismissAnimationController.swift */; };
+		0409CA1F1B25882200F3A28C /* FlipAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409CA1E1B25882200F3A28C /* FlipAnimationController.swift */; };
+		0409CA221B258EB700F3A28C /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409CA211B258EB700F3A28C /* SwipeInteractionController.swift */; };
+		0409CA241B25939F00F3A28C /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409CA231B25939F00F3A28C /* Author.swift */; };
+		0409CA261B25941300F3A28C /* AuthorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409CA251B25941300F3A28C /* AuthorStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		0402C3EB1B20985D0054CF1F /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0402C3EE1B2099C90054CF1F /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
 		0409CA1C1B257B2000F3A28C /* ShrinkDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShrinkDismissAnimationController.swift; sourceTree = "<group>"; };
+		0409CA1E1B25882200F3A28C /* FlipAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipAnimationController.swift; sourceTree = "<group>"; };
+		0409CA211B258EB700F3A28C /* SwipeInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
+		0409CA231B25939F00F3A28C /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		0409CA251B25941300F3A28C /* AuthorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 				0402C3DC1B208F770054CF1F /* View models */,
 				0402C3DD1B208F830054CF1F /* View controllers */,
 				0402C3ED1B2099800054CF1F /* Animation controllers */,
+				0409CA201B258E9E00F3A28C /* Interaction controllers */,
 				0402C3DE1B208F9D0054CF1F /* Nibs & Storyboards */,
 				0402C3AE1B208E350054CF1F /* Supporting Files */,
 			);
@@ -140,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				0402C3D51B208EF00054CF1F /* Photo.swift */,
+				0409CA231B25939F00F3A28C /* Author.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0402C3D21B208EBD0054CF1F /* PhotoStore.swift */,
+				0409CA251B25941300F3A28C /* AuthorStore.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -194,8 +205,17 @@
 			children = (
 				0402C3EE1B2099C90054CF1F /* BounceAnimationController.swift */,
 				0409CA1C1B257B2000F3A28C /* ShrinkDismissAnimationController.swift */,
+				0409CA1E1B25882200F3A28C /* FlipAnimationController.swift */,
 			);
 			path = "Animation controllers";
+			sourceTree = "<group>";
+		};
+		0409CA201B258E9E00F3A28C /* Interaction controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0409CA211B258EB700F3A28C /* SwipeInteractionController.swift */,
+			);
+			name = "Interaction controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,13 +320,17 @@
 			files = (
 				0402C3E41B2093790054CF1F /* ExampleCell.swift in Sources */,
 				0402C3D81B208F280054CF1F /* MainViewModel.swift in Sources */,
+				0409CA221B258EB700F3A28C /* SwipeInteractionController.swift in Sources */,
 				0402C3E61B2095150054CF1F /* DetailViewModel.swift in Sources */,
 				0402C3D61B208EF00054CF1F /* Photo.swift in Sources */,
 				0402C3B11B208E350054CF1F /* AppDelegate.swift in Sources */,
 				0402C3D31B208EBD0054CF1F /* PhotoStore.swift in Sources */,
 				0402C3D11B208EA40054CF1F /* MainViewController.swift in Sources */,
 				0402C3E81B2095C40054CF1F /* DetailViewController.swift in Sources */,
+				0409CA241B25939F00F3A28C /* Author.swift in Sources */,
+				0409CA1F1B25882200F3A28C /* FlipAnimationController.swift in Sources */,
 				0409CA1D1B257B2000F3A28C /* ShrinkDismissAnimationController.swift in Sources */,
+				0409CA261B25941300F3A28C /* AuthorStore.swift in Sources */,
 				0402C3EF1B2099C90054CF1F /* BounceAnimationController.swift in Sources */,
 				0402C3EC1B20985D0054CF1F /* AboutViewController.swift in Sources */,
 				0402C3EA1B2098330054CF1F /* AboutViewModel.swift in Sources */,
