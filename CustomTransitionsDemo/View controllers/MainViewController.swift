@@ -28,7 +28,10 @@ class MainViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
         tableView.tableFooterView = UIView(frame: CGRectZero)
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.delegate = self
     }
     

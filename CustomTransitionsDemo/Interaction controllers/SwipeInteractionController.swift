@@ -21,38 +21,42 @@ class SwipeInteractionController: UIPercentDrivenInteractiveTransition {
     
     
     func wireToViewController(viewController: UIViewController!) {
-    
+        
         navigationController = viewController.navigationController
         prepareGestureRecognizerInView(viewController.view)
     }
     
     func handleGesture(gestureRecognizer: UIPanGestureRecognizer) {
-    
+        
+        // 0. Maintain the gesture progress.
         let translation = gestureRecognizer.translationInView(gestureRecognizer.view!.superview!)
+        var progress = (translation.x / 200)
+        progress = CGFloat(fminf(fmaxf(Float(progress), 0.0), 1.0))
         
         switch gestureRecognizer.state {
-        
+            
         case .Began:
             // 1. Start the interactive transition
             interactionInProgress = true
             navigationController.popViewControllerAnimated(true)
             
         case .Changed:
-            // 2. Compute the current position
-            var fraction = (translation.x / 200)
-            fraction = CGFloat(fminf(fmaxf(Float(fraction), 0.0), 1.0))
+            // 2. Should we complete?
+            shouldCompleteTransition = progress > 0.5
             
-            // 3. Should we complete?
-            shouldCompleteTransition = fraction > 0.5
+            // 3. Update the animation
+            updateInteractiveTransition(progress)
             
-            // 4. Update the animation
-            updateInteractiveTransition(fraction)
+        case .Cancelled:
+            // 4. Handle possible cancellation
+            interactionInProgress = false
+            cancelInteractiveTransition()
             
-        case .Ended, .Cancelled:
-            // 5. Finish or cancel
+        case .Ended:
+            // 5. If we didn't drag far enough, we should cancel
             interactionInProgress = false
             
-            if !shouldCompleteTransition || gestureRecognizer.state == .Cancelled {
+            if !shouldCompleteTransition  {
                 cancelInteractiveTransition()
             } else {
                 finishInteractiveTransition()
